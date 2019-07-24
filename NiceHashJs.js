@@ -1,9 +1,6 @@
 const _ = require('lodash');
 const axios = require('axios');
-// import './shim.js'
-// import crypto from 'crypto'
-require('./shim')
-const crypto = require('crypto')
+const CryptoJS = require("crypto-js");
 const pkg = require('./package.json');
 
 const API_BASE_URL = 'https://api2.nicehash.com';
