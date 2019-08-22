@@ -218,8 +218,14 @@ class NiceHashClient {
         return this.getRequestPromise('GET', '/main/api/v2/mining/rigs', {})
     }
 
-    getMiningRigsStats() {
-        return this.getRequestPromise('GET', '/main/api/v2/mining/rigs/stats', {})
+    getMiningRigsStats(afterTimestamp) {
+        const params = {}
+        if(afterTimestamp) {
+            params['afterTimestamp'] = afterTimestamp
+        }
+
+        return this.getRequestPromise('GET', '/main/api/v2/mining/rigs/stats', params)
+    }
     }
 }
 
