@@ -1,6 +1,6 @@
 {
   "name": "nicehashjs2",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "NiceHash API Wrapper",
   "main": "index.js",
   "scripts": {
