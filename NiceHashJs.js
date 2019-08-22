@@ -226,6 +226,14 @@ class NiceHashClient {
 
         return this.getRequestPromise('GET', '/main/api/v2/mining/rigs/stats', params)
     }
+
+    /**
+     * Get the latest forex exchange rates
+     * 
+     *  - This is a public API endpoint
+     */
+    getExchangeRates() {
+        return this.getRequestPromise('GET', '/main/api/v2/exchangeRate/list', {});
     }
 }
 
