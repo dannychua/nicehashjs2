@@ -188,6 +188,12 @@ class NiceHashClient {
         return 'headers'
     }
 
+    getHeadersUnsigned() {
+        return {
+            'user-agent': `NiceHashJs/${pkg.version} (https://github.com/dannychua/nicehashjs2)`,
+        }
+    }
+
     getRequestPromise(httpMethod, requestPath, params) {
         const payload = _.merge({headers: this.getHeaders(httpMethod, requestPath, params)}, {params: params });
         return this.axios.get(requestPath, payload)
