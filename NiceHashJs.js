@@ -193,8 +193,9 @@ class NiceHashClient {
         return this.axios.get(requestPath, payload)
     }
 
-    getExchangeRates() {
-        return this.getRequestPromise('GET', '/main/api/v2/exchangeRate/list/', {})
+    getUnsignedRequestPromise(httpMethod, requestPath, params) {
+        const payload = _.merge({headers: this.getHeadersUnsigned()}, {params: params });
+        return this.axios.get(requestPath, payload)
     }
 
     getWallets() {
@@ -233,7 +234,7 @@ class NiceHashClient {
      *  - This is a public API endpoint
      */
     getExchangeRates() {
-        return this.getRequestPromise('GET', '/main/api/v2/exchangeRate/list', {});
+        return this.getUnsignedRequestPromise('GET', '/main/api/v2/exchangeRate/list', {});
     }
 }
 
