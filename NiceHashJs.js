@@ -231,7 +231,7 @@ class NiceHashClient {
             params['afterTimestamp'] = afterTimestamp
         }
 
-        return this.getRequestPromise('GET', '/main/api/v2/mining/rigs/stats', params)
+        return this.getRequestPromise('GET', '/main/api/v2/mining/rigs/stats/unpaid', params)
     }
 
     /**
